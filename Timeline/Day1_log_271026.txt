@@ -1,0 +1,24 @@
+1. Dataclass:
+
+    Dataclass is like a auto pilot to initialize class object. we can simply create class by assigning @dataclass on top of the class name and decalre the variables directly without creating the __init__ function.
+    @dataclass generates __init__, __repr__, and __eq__
+    
+    Normal creation:
+
+        class student:
+            def __init__(self, name, age):
+                self.name = name
+                self.age = age
+
+    using dataclass:
+
+        form dataclasses import dataclass
+
+        @dataclass
+        class student:
+            name: str
+            age: int
+
+2. Type hints:
+
+    we can easily understand the type of the data that the variable holds, so that makes us to understand the use cases of a variable.
