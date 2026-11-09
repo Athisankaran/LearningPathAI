@@ -1,0 +1,21 @@
+Vectors and Similarity (Semantic Search)
+
+When a user asks a question, the question is converted into a numerical vector (embedding) using an embedding model.
+
+Before this, documents are usually split into smaller chunks. Each chunk is converted into a numerical vector using the same or a compatible embedding model and stored in a vector database along with its original text.
+
+When a user submits a question:
+
+1. The embedding model converts the user's question into a numerical vector.
+2. The vector database compares the query vector with the previously stored vectors using a similarity metric such as cosine similarity.
+3. It identifies and retrieves the most relevant text chunks based on their similarity scores.
+4. These retrieved text chunks, along with the original user question, are sent to the LLM as context.
+5. The LLM uses the provided context to understand the question and generate the final answer.
+
+In simple terms:
+- Embedding model → Converts text into numerical vectors.
+- Vector database → Stores vectors and searches for similar ones.
+- Cosine similarity → Measures how similar two vectors are.
+- LLM → Uses the retrieved information to generate an answer.
+
+This process of retrieving relevant information and providing it to an LLM to generate an answer is called RAG (Retrieval-Augmented Generation).
